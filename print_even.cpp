@@ -1,3 +1,5 @@
+/* Print even number between 1 and 10 */
+
 #include <iostream>
 using std::cout;
 

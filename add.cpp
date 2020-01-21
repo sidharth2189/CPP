@@ -1,3 +1,5 @@
+/* Add using a function */ 
+
 # include <iostream>
 using std::cout;
 

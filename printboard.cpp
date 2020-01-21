@@ -1,3 +1,5 @@
+/* Print a board */
+
 #include <iostream>
 #include <vector>
 using std::cout;

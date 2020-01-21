@@ -1,3 +1,5 @@
+/* Store data using vectors and print */
+
 #include <iostream>
 #include <vector>
 using std::vector;
