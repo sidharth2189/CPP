@@ -28,4 +28,15 @@ int main()
 		}
 		cout << '\n';
 	}
+
+	// Range based for loop
+	cout << "Print container using range based for loop" << '\n';
+	for (auto i : b)
+	{
+		for (int j : i)
+		{
+			cout << j << " ";
+		}
+		cout << '\n';
+	}
 }
