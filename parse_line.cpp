@@ -24,14 +24,26 @@ vector<int> ParseLine(string str)
     return vec;
 }
 
-void ReadBoardFile(string path) {
+// TODO: Change the return type of ReadBoardFile.
+vector<vector<int>> ReadBoardFile(string path) 
+{
   ifstream myfile (path);
-  if (myfile) {
+  // TODO: Declare an empty board variable here with
+  // type vector<vector<int>>.
+  vector<vector<int>> board{};
+  vector<int> row;
+  if (myfile) 
+  {
     string line;
-    while (getline(myfile, line)) {
-      cout << line << "\n";
+    while (getline(myfile, line))
+    {
+      // TODO: Replace the "cout" code with a call to ParseLine for each line and push the results of ParseLine to the back of the board.
+      row = ParseLine(line);
+      board.push_back(row);
     }
   }
+  // TODO: Return the board variable.
+  return board;
 }
 
 void PrintBoard(const vector<vector<int>> board) {
@@ -45,9 +57,10 @@ void PrintBoard(const vector<vector<int>> board) {
 
 #include "test.cpp" // For testing.
 
-int main() {
-  ReadBoardFile("files/1.board");
-  TestParseLine(); // For testing.
+int main() 
+{
+  vector<vector<int>> board = ReadBoardFile("files/1.board");
+//   TestParseLine(); // For testing.
   // Leave commented out.
-  // PrintBoard(board);
+  PrintBoard(board);
 }
