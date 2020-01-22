@@ -16,7 +16,7 @@ int main()
     int n;
 
     while (my_stream >> n >> c) {
-      cout << "That stream was successful:" << n << " " << c << "\n";
+      cout << "That stream was successful:" << n << c << "\n";
     }
     cout << "The stream has failed." << "\n";
 }

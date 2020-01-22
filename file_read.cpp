@@ -17,7 +17,7 @@ int main()
     std::string line;
     if (my_file) 
     {
-      std::cout << "The file stream has been created!" << "\n";
+      std::cout << "The file stream has been created!" << '\n';
       while (getline(my_file, line))
       {
           std::cout << line << '\n';

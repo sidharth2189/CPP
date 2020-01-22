@@ -15,10 +15,10 @@ void ReadBoardFile(string str)
   string line;
   if (my_file) 
   {
-    std::cout << "The file stream has been created!" << "\n";
+    cout << "The file stream has been created!" << "\n";
     while (getline(my_file, line))
     {
-      std::cout << line << '\n';
+      cout << line << '\n';
     }
   }
 }
