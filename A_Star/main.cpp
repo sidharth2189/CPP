@@ -42,7 +42,15 @@ vector<vector<State>> ReadBoardFile(string path) {
   return board;
 }
 
-// TODO: Write the Search function stub here.
+// TODO: Write the Heuristic function here.
+int Heuristic(int x1, int y1, int x2, int y2)
+{
+    return abs(x2-x1) + abs(y2-y1);
+}
+
+/** 
+ * Implementation of A* search algorithm
+ */
 vector<vector<State>> Search(vector<vector<State>> grid, int initial_point [], int goal_point [])
 {
     vector<vector<State>> final_grid;
@@ -67,6 +75,7 @@ void PrintBoard(const vector<vector<State>> board) {
   }
 }
 
+#include "test_heuristic.cpp" // For testing solution
 
 int main() {
   // TODO: Declare "init" and "goal" arrays with values {0, 0} and {4, 5} respectively.
@@ -77,4 +86,6 @@ int main() {
   // TODO: Call Search with "board", "init", and "goal". Store the results in the variable "solution".
   // TODO: Change the following line to pass "solution" to PrintBoard.
   PrintBoard(solution);
+  // Tests
+  TestHeuristic();
 }
