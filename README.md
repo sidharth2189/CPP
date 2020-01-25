@@ -4,7 +4,7 @@
  1) Foundations
     - Introduction (store data, vectors, control loops, functions, read from file, formatting printed board)
     - A* search (path planning through an ASCII Keyboard)
-    - Multifiles (header files, pointers, build tools, pointers, maps and classes)
+    - Multifiles (header files, pointers (with various object types and with functions), build tools, maps and classes)
 
  2) Object oriented approach
     - Structures, Classes, members, constructors, initialization, encapsulation, access specifiers
