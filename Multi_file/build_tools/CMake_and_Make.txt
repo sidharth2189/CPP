@@ -1,0 +1,8 @@
+From within the build directory, you can now run CMake as follows:
+
+
+root@abc123defg:/home/workspace/cmake_example/build# cmake ..
+root@abc123defg:/home/workspace/cmake_example/build# make
+The first line directs the cmake command at the top-level CMakeLists.txt file with ... This command uses the CMakeLists.txt to configure the project and create a Makefile in the build directory.
+
+In the second line, make finds the Makefile and uses the instructions in the Makefile to build the project.
