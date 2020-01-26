@@ -1,0 +1,10 @@
+C++ is a compiled language, which is to say there is a separate program - the compiler - that converts your code to an executable program that the computer can run. This means that, after you save a new C++ program to file, running it is normally a two step process:
+
+Compile your code with a compiler.
+Run the executable file that the compiler outputs.
+Code in a file is saved, let's say as filename.cpp in a folder called /code. To compile it using the C++17 standard, you can run the following command:
+
+g++ -std=c++17 ./code/filename.cpp 
+And then to run the resulting executable file, you can run:
+
+./a.out
