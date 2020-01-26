@@ -1,3 +1,23 @@
+The first lines that you'll want in your CMakeLists.txt are lines that specifies the minimum versions of cmake and C++ required to build the project.
+
+cmake_minimum_required(VERSION 3.5.1)
+
+set(CMAKE_CXX_STANDARD 14)
+
+CMake requires that we name the project, so you should choose a name for the project
+
+project(<your_project_name>)
+
+Next, we want to add an executable to this project. You can do that with the add_executable command by specifying the executable name, along with the locations of all the source files that you will need. CMake has the ability to automatically find source files in a directory, but for now, you can just specify each file needed:
+
+
+add_executable(your_executable_name  path_to_file_1  path_to_file_2 ...)
+
+A typical CMake project will have a build directory in the same place as the top-level CMakeLists.txt. Make a build directory in the /home/workspace/cmake_example folder:
+
+
+root@abc123defg:/home/workspace/cmake_example# mkdir build
+root@abc123defg:/home/workspace/cmake_example# cd build
 From within the build directory, you can now run CMake as follows:
 
 
