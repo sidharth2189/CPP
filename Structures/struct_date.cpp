@@ -4,9 +4,10 @@
 
 // Define a simple structure
 struct Date {
-  int day;
-  int month;
-  int year;
+  // initialize members
+  int day {1};
+  int month {1};
+  int year {0};
 };
 
 // Define a main function to instantiate and test 
