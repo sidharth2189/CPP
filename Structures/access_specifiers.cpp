@@ -8,7 +8,11 @@ struct Date {
     // Set day
     void Day(int d)
     {
-        if (month != 2 && d > 0 && d <= 31)
+        if (month != 2 && month != 4 && month != 6 && month != 9 && month != 11 && d > 0 && d <= 31)
+        {
+            day = d;
+        }
+        else if (month != 2 && d > 0 && d <= 30)
         {
             day = d;
         }
@@ -35,8 +39,7 @@ struct Date {
         }
         else
         {
-            cout << "Invalid date" << "\n";
-            day = 00;
+            cout << "Invalid date " << d << " for the month " << month << "\n";
         }
         
     }
@@ -57,7 +60,6 @@ struct Date {
         else
         {
             cout << "Invalid month" << "\n";
-            month = 00;
         }
     }
     
@@ -88,10 +90,10 @@ struct Date {
 int main() {
   Date date;
   date.Year(2020);
-  date.Month(2);
-  date.Day(29);
-//   assert(date.Day() == 29);
-//   assert(date.Month() == 8);
-//   assert(date.Year() == 1981);
+  date.Month(4);
+  date.Day(31);
+  assert(date.Day() == 31);
+  assert(date.Month() == 4);
+  assert(date.Year() == 2020);
   std::cout << date.Day() << "/" << date.Month() << "/" << date.Year() << "\n";
 }
