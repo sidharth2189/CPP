@@ -1,0 +1,3 @@
+Encapsulation groups together relevant data in a group
+
+Abstraction hides the details of how we work with the data
