@@ -1,9 +1,8 @@
-#include <cassert>
 #include <iostream>
+#include <cassert>
 using std::cout;
 
-// TODO: Define public accessors and mutators for the private member variables
-struct Date {
+class Date {
  public:
     // Set day
     void Day(int d)
@@ -30,8 +29,8 @@ struct Date {
                 }
                 else
                 {
-                    cout << "Invalid date" << "\n";
-                    day = 00;
+                    day = d;
+                    cout << "Invalid day" << d << "\n";
                 }
                 
             }
@@ -39,7 +38,8 @@ struct Date {
         }
         else
         {
-            cout << "Invalid date " << d << " for the month " << month << "\n";
+            day = d;
+            cout << "Invalid day " << day << " for the month " << month << "\n";
         }
         
     }
@@ -60,6 +60,7 @@ struct Date {
         else
         {
             cout << "Invalid month" << "\n";
+            month = m;
         }
     }
     
@@ -87,13 +88,16 @@ struct Date {
   int year{0};
 };
 
-int main() {
-  Date date;
-  date.Year(2020);
-  date.Month(4);
-  date.Day(31);
-  assert(date.Day() == 31);
-  assert(date.Month() == 4);
-  assert(date.Year() == 2020);
-  std::cout << date.Day() << "/" << date.Month() << "/" << date.Year() << "\n";
+
+// Test in main
+int main()
+{
+    Date date;
+    date.Month(4);
+    date.Year(2020);
+    date.Day(31);
+//     assert(date.Month() == 12);
+//     assert(date.Year() == 2000);
+//     assert(date.Day() == -1);
+    cout << date.Day() << "/" << date.Month() << "/" << date.Year() << "\n";
 }
