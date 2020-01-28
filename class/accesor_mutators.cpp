@@ -1,3 +1,16 @@
+/*
+    Design and implement class called BankAccount. This will be a generic account defined by its account number,
+    the name of the owner and the funds available.
+
+    Complete the following steps:
+
+    1) Create class called BankAccount
+    2) Use typical info about bank accounts to design attributes, such as the account number,
+    the owner name, and the available funds.
+    3) Specify access so that member data are protected from other parts of the program.
+    4) Create accessor and mutator functions for member data.
+*/
+
 #include <iostream>
 #include <string>
 #include <cassert>
