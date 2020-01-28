@@ -17,7 +17,7 @@ class Car {
     // Car (string str, int hp, float wt);
     
     // Mutators
-    void set_brand(char*);
+    void set_brand(char brand_name[]);
     void set_horsepower(int hp);
     void set_weight(float wt);
     
@@ -35,7 +35,7 @@ class Car {
 // }
 
 // Define setters
-void Car::set_brand(char* brand_name) {brand = brand_name;}
+void Car::set_brand(char brand_name[]) {brand = brand_name;}
 void Car::set_horsepower(int hp) {horsepower = hp;}
 void Car::set_weight(float wt) {weight = wt;}
 
