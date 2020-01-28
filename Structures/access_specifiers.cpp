@@ -30,7 +30,7 @@ class Date {
                 else
                 {
                     day = d;
-                    cout << "Invalid day" << d << "\n";
+                    cout << "Invalid day " << day << "\n";
                 }
                 
             }
@@ -93,9 +93,9 @@ class Date {
 int main()
 {
     Date date;
-    date.Month(4);
-    date.Year(2020);
-    date.Day(31);
+    date.Month(2);
+    date.Year(1900);
+    date.Day(29);
 //     assert(date.Month() == 12);
 //     assert(date.Year() == 2000);
 //     assert(date.Day() == -1);
