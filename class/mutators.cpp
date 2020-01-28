@@ -9,7 +9,7 @@ class Car {
     private:
     int horsepower;
     float weight;
-    char *brand;
+    string brand;
         
     // TODO: Declare getter and setter for brand
     public:
@@ -17,7 +17,7 @@ class Car {
     // Car (string str, int hp, float wt);
     
     // Mutators
-    void set_brand(string str);
+    void set_brand(char*);
     void set_horsepower(int hp);
     void set_weight(float wt);
     
@@ -35,10 +35,7 @@ class Car {
 // }
 
 // Define setters
-void Car::set_brand(string str) {// Initialization of char array
-    brand = new char[str.length() + 1];
-    // copying every character from string to char array;
-    strcpy(brand, str.c_str());}
+void Car::set_brand(char* brand_name) {brand = brand_name;}
 void Car::set_horsepower(int hp) {horsepower = hp;}
 void Car::set_weight(float wt) {weight = wt;}
 
@@ -51,6 +48,7 @@ float Car::get_weight() const {return weight;}
 int main() 
 {
     Car car;
-    car.set_brand("Peugeot");
+    char brand_name[] = "Peugeot";
+    car.set_brand(brand_name);
     cout << car.get_brand() << "\n";   
 }
