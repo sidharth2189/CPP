@@ -65,9 +65,7 @@ void Date::Year(int year) {
 
 string Date::String() const {
     string str;
-    string s_day;
-    string s_year;
-    switch (month_)
+    switch (Month())
     {
         case 1: str = "January";
             break;
@@ -95,11 +93,7 @@ string Date::String() const {
             break;
     }
     
-    s_day = to_string(day_);
-    s_year = to_string(year_);
-    str = str + " " + s_day + ", " + s_year;
-    
-    return str;
+    return str + " " + to_string(Day()) + ", " + to_string(Year());
 }
 // Test
 int main() {
