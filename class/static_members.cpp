@@ -18,7 +18,6 @@ class Sphere {
     volume_ = pi_ * 4 / 3 * pow(radius_, 3);
   }
   
-
  private:
   static float const pi_;
   int radius_;
