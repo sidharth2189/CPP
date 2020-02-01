@@ -20,9 +20,9 @@ class Square {
 class Rectangle {
     public:
     // Define a Rectangle constructor that takes a Square
-    Rectangle(Square square) : width_(square.side_), height_(square.side_) {}
+    Rectangle(Square &square) : width_(square.side_), height_(square.side_) {}
     // Define Area() to compute area of Rectangle
-    int Area() {return width_*height_;} 
+    int Area() const {return width_*height_;} 
     private:
     // Add private attributes width, height;
     int width_;
