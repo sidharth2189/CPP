@@ -1,3 +1,8 @@
+/*
+    The pointer p2 in the example is invalid as soon as free(p) is called. 
+    It still holds the address to the memory location which has been freed, 
+    but may not access it anymore. Such a pointer is called a "dangling pointer".
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
