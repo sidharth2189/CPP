@@ -50,3 +50,16 @@ int main()
 
     return 0;
 }
+
+/* 
+    The call to new has the following consequences:
+
+    1-Memory is allocated to hold a new object of type MyClass
+    2-A new object of type MyClass is constructed within the allocated 
+    memory by calling the constructor of MyClass
+    
+    The call to delete causes the following:
+
+    1-The object of type MyClass is destroyed by calling its destructor
+    2-The memory which the object was placed in is deallocated
+*/
