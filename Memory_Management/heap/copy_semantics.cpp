@@ -28,7 +28,10 @@
     This means that when the first object goes out of scope, it releases the memory resource by 
     calling free in its destructor. The second object does the same - which causes the program 
     to crash as the pointer is now referencing an invalid area of memory, which has already been 
-    freed
+    freed. 
+    
+    The default behavior of both copy constructor and assignment operator is to perform 
+    a shallow copy.
 */
 
 #include <iostream>
