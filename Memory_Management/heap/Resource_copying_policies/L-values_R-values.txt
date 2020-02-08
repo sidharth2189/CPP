@@ -1,0 +1,4 @@
+- makes code robust, more intentional
+- makes code faster and efficient
+
+L values and R values tell us much about the life cycle of an object in memory and its ownership policy.
