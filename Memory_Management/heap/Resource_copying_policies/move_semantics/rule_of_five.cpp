@@ -123,5 +123,5 @@ int main()
     object and "assigned" to obj3. Note that while the call looks like an assignment, 
     the move constructor is called under the hood, making the call identical to MyMovableClass 
     obj2(MyMovableClass(300));. By creating obj3 in such a way, we are reusing the temporary 
-    rvalue and transferring ownership of its resources to the newly
+    rvalue and transferring ownership of its resources.
 */
