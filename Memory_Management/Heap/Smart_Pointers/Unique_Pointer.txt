@@ -1,0 +1,5 @@
+A unique pointer is the exclusive owner of the memory resource it represents. 
+There must not be a second unique pointer to the same memory resource, otherwise 
+there will be a compiler error. As soon as the unique pointer goes out of scope, 
+the memory resource is deallocated again. Unique pointers are useful when working 
+with a temporary heap resource that is no longer needed once it goes out of scope.
