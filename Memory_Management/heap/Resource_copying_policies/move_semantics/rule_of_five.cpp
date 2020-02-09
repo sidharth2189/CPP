@@ -112,11 +112,11 @@ int main()
 
 /*
     By looking at the stack addresses of the objects, we can see that the temporary object
-    is moved using the move assignment operator we wrote earlier, because the instance obj1
+    is moved using the move assignment operator, because the instance obj1
     is assigned an rvalue. As expected from an rvalue, its destructor is called immediately
-    afterwards. But as we have made sure to null its data pointer in the move constructor, 
+    afterwards. But as it is made sure to null its data pointer in the move constructor, 
     the actual data will not be deleted. The advantage from a performance perspective in 
-    this case is that no deep-copy of the rvalue object needs to be made, we are simply 
+    this case is that no deep-copy of the rvalue object needs to be made, it is simply 
     redirecting the internal resource handle thus making an efficient shallow copy.
 
     Next, another temporary instance with a size of 1200 bytes is created as a temporary 
