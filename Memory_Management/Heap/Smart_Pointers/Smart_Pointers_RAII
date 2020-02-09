@@ -1,0 +1,15 @@
+The benefits of smart pointers
+
+To put it briefly: Smart pointers were introduced in C++ to solve the problems with new 
+and delete operators by providing a degree of automatic memory management: When a smart 
+pointer is no longer needed (which is the case as soon as it goes out of scope), the 
+memory to which it points is automatically deallocated. When contrasted with smart 
+pointers, the conventional pointers we have seen so far are often termed "raw pointers".
+
+In essence, smart pointers are classes that are wrapped around raw pointers. By overloading 
+the -> and * operators, smart pointer objects make sure that the memory to which their internal 
+raw pointer refers to is properly deallocated. This makes it possible to use smart pointers 
+with the same syntax as raw pointers. As soon as a smart pointer goes out of scope, its 
+destructor is called and the block of memory to which the internal raw pointer refers is 
+properly deallocated. This technique of wrapping a management class around a resource has 
+been conceived by Bjarne Stroustroup and is called Resource Acquisition Is Initialization (RAII). 
