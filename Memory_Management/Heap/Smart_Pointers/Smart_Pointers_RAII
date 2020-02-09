@@ -13,3 +13,18 @@ with the same syntax as raw pointers. As soon as a smart pointer goes out of sco
 destructor is called and the block of memory to which the internal raw pointer refers is 
 properly deallocated. This technique of wrapping a management class around a resource has 
 been conceived by Bjarne Stroustroup and is called Resource Acquisition Is Initialization (RAII). 
+
+The RAII is a widespread programming paradigm, that can be used to protect a resource such as a 
+file stream, a network connection or a block of memory which need proper management.
+
+Acquiring and releasing resources¶
+In most programs of reasonable size, there will be many situations where a certain action 
+at some point will necessitate a proper reaction at another point, such as:
+
+- Allocating memory with new or malloc, which must be matched with a call to delete or free.
+
+- Opening a file or network connection, which must be closed again after the content has been 
+read or written.
+
+- Protecting synchronization primitives such as atomic operations, memory barriers, monitors 
+or critical sections, which must be released to allow other threads to obtain them.
