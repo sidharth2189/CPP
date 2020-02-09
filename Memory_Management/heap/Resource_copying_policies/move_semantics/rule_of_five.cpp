@@ -101,9 +101,27 @@ public:
 
 int main()
 {
-    MyMovableClass obj1(10); // regular constructor
-    MyMovableClass obj2(obj1); // copy constructor
-    obj2 = obj1; // copy assignment operator
+    MyMovableClass obj1(100); // constructor
+
+    obj1 = MyMovableClass(200); // move assignment operator
+
+    MyMovableClass obj2 = MyMovableClass(300); // move constructor 
 
     return 0;
 }
+
+/*
+    By looking at the stack addresses of the objects, we can see that the temporary object
+    is moved using the move assignment operator we wrote earlier, because the instance obj1
+    is assigned an rvalue. As expected from an rvalue, its destructor is called immediately
+    afterwards. But as we have made sure to null its data pointer in the move constructor, 
+    the actual data will not be deleted. The advantage from a performance perspective in 
+    this case is that no deep-copy of the rvalue object needs to be made, we are simply 
+    redirecting the internal resource handle thus making an efficient shallow copy.
+
+    Next, another temporary instance with a size of 1200 bytes is created as a temporary 
+    object and "assigned" to obj3. Note that while the call looks like an assignment, 
+    the move constructor is called under the hood, making the call identical to MyMovableClass 
+    obj2(MyMovableClass(300));. By creating obj3 in such a way, we are reusing the temporary 
+    rvalue and transferring ownership of its resources to the newly
+*/
