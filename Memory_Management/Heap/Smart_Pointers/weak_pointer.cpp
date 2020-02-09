@@ -6,6 +6,7 @@
     The following rule applies to weak pointers: You can only create weak pointers out of shared 
     pointers or out of another weak pointer. 
 
+    In code:
     First, a shared pointer to an integer is created with a reference count of 1 after creation. 
     Then, two weak pointers to the integer resource are created, the first directly from the 
     shared pointer and the second indirectly from the first weak pointer. As can be seen from 
