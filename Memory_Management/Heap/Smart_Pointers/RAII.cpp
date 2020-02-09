@@ -51,6 +51,23 @@ int main()
     soon as the object goes out of scope. 
 */
 
+/*
+int main() // Memory leakage happens as the destructor of MyInt is never called.
+{
+    double den[] = {1.0, 2.0, 3.0, 4.0, 5.0};
+    for (size_t i = 0; i < 5; ++i)
+    {
+        // allocate the resource on the heap
+        MyInt *en = new MyInt(new int(i));
+
+        // use the resource
+        std::cout << **en << "/" << den[i] << " = " << **en / den[i] << std::endl;
+    }
+
+    return 0;
+}
+*/
+
 /* 
 int main() // without RAII
 {
