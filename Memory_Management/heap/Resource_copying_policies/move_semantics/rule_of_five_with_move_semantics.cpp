@@ -1,3 +1,22 @@
+/*
+    In some cases, it can make sense to treat lvalues like rvalues. 
+    At some point in your code, you might want to transfer ownership 
+    of a resource to another part of your program as it is not needed 
+    anymore in the current scope. But instead of copying it, you want 
+    to just move it as we have seen before. The "problem" with our 
+    implementation of MyMovableClass is that the call useObject(obj1) 
+    will trigger the copy constructor as we have seen in one of the last 
+    examples. But in order to move it, we would have to pretend to the 
+    compiler that obj1 was an rvalue instead of an lvalue so that we can 
+    make an efficient move operation instead of an expensive copy.
+
+    There is a solution to this problem in C++, which is std::move. 
+    This function accepts an lvalue argument and returns it as an 
+    rvalue without triggering copy construction. So by passing an 
+    object to std::move we can force the compiler to use move semantics, 
+    either in the form of move constructor or the move assignment operator.
+*/
+
 #include <stdlib.h>
 #include <iostream>
 
