@@ -22,3 +22,5 @@
     - passing data between threads
     - use mutexes and locks to safely access shared data from various threads
     - condition variable and message queues (implement a flexible message queue for flexible inter-thread communication)
+
+[Reference](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213)
