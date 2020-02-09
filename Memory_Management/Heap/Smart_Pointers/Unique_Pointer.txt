@@ -3,3 +3,14 @@ There must not be a second unique pointer to the same memory resource, otherwise
 there will be a compiler error. As soon as the unique pointer goes out of scope, 
 the memory resource is deallocated again. Unique pointers are useful when working 
 with a temporary heap resource that is no longer needed once it goes out of scope.
+
+Summing up, the unique pointer allows a single owner of the underlying internal 
+raw pointer. Unique pointers should be the default choice unless you know for 
+certain that sharing is required at a later stage. Given transfer ownership of a 
+resource using the Rule of Five and move semantics, internally, the unique pointer 
+uses this very concept along with RAII to encapsulate a resource (the raw pointer) 
+and transfer it between pointer objects when either the move assignment operator 
+or the move constructor are called. Also, a key feature of a unique pointer, which 
+makes it so well-suited as a return type for many functions, is the possibility to 
+convert it to a shared pointer. We will have a deeper look into this in the section 
+on ownership transfer.
