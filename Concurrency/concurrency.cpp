@@ -11,8 +11,7 @@
 
     A running program consists of at least one thread. When the main function is executed, we 
     refer to it as the "main thread". Threads are uniquely identified by their thread ID, which 
-    can be particularly useful for debugging a program. The code below prints the thread 
-    identifier of the main thread and outputs it to the console:
+    can be particularly useful for debugging a program.
 */
 
 #include <iostream>
@@ -20,7 +19,12 @@
 
 int main()
 {
+    // prints the thread identifier of the main thread to the console    
     std::cout << "Hello concurrent world from main! Thread id = " << std::this_thread::get_id() << std::endl;
+
+    // Retrieves the number of available CPU cores of a system
+    unsigned int nCores = std::thread::hardware_concurrency();
+    std::cout << "This machine supports concurrency with " << nCores << " cores available" << std::endl;
 
     return 0;
 }
