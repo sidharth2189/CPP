@@ -46,6 +46,12 @@
         "chrono": "cpp",
         "ctime": "cpp",
         "ratio": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "future": "cpp",
+        "condition_variable": "cpp",
+        "functional": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "mutex": "cpp"
     }
 }
