@@ -1,11 +1,20 @@
 Intro
+https://youtu.be/abu0IhoNGwU
 
 Promises and Futures
+https://youtu.be/UAjueqrPC6E
+https://youtu.be/iWRDk72dN94
 
 Threads vs. Tasks
+https://youtu.be/ooZsL0l9HLc
 
 Threads vs. Tasks Quiz
+https://youtu.be/OeC8RJNfVnY
 
 Avoiding Data Races
+https://youtu.be/TBHy0eqf7Q4
+https://youtu.be/xZZgcVvaHlA
 
 Lesson 2 Exercise
+Overview: https://youtu.be/hYQus_Yieu4
+Code discussion: https://youtu.be/1rcgMOF996k
