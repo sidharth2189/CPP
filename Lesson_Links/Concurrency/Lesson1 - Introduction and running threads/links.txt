@@ -1,0 +1,30 @@
+Intro
+https://youtu.be/frWbL4aWNI4
+
+Process and threads
+https://youtu.be/V4YyCCELd4M
+
+https://youtu.be/QdXCdZdGBwM
+
+https://youtu.be/9XuSTdkxgOE
+
+Running a single thread
+https://youtu.be/tQZA7gukZTc
+https://youtu.be/WOUZqtMtwhE
+
+Starting a thread with function object
+https://youtu.be/ytEszL3n_Fw
+https://youtu.be/K8GxT0bHosY
+https://youtu.be/BOU4yXn9y9g
+
+Starting a thread with Variadic templates & Member functions
+https://youtu.be/4CnhFkKbUk8
+https://youtu.be/iFm6aUw1Tqk
+
+Running Multiple threads
+https://youtu.be/ZjkflMtAaYU
+https://youtu.be/L_s79seFi-I
+
+Lesson 1 Project Exercise
+Overview: https://youtu.be/iifZEu0ctxc
+Code walkthrough: https://youtu.be/OwiKpGYN9wI
