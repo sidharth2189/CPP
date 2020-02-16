@@ -1,0 +1,25 @@
+Understanding data races
+One of the primary sources of error in concurrent programming are data races. 
+They occur, when two concurrent threads are accessing the same memory location 
+while at least one of them is modifying (the other thread might be reading or 
+modifying). In this scenario, the value at the memory location is completely 
+undefined. Depending on the system scheduler, the second thread will be executed 
+at an unknown point in time and thus see different data at the memory location 
+with each execution. Depending on the type of program, the result might be anything 
+from a crash to a security breach when data is read by a thread that was not meant 
+to be read, such as a user password or other sensitive information. Such an error 
+is called a „data race“ because two threads are racing to get access to a memory 
+location first, with the content at the memory location depending on the result 
+of the race.
+
+The file data_race.png illustrates the principle: One thread wants to increment a 
+variable x, whereas the other thread wants to print the same variable. Depending 
+on the timing of the program and thus the order of execution, the printed result 
+might change each time the program is executed.
+
+In this example, one safe way of passing data to a thread would be to carefully 
+synchronize the two threads using either join() or the promise-future concept that 
+can guarantee the availability of a result. Data races are always to be avoided. 
+Even if nothing bad seems to happen, they are a bug and should always be treated 
+as such. Another possible solution for the above example would be to make a copy 
+of the original argument and pass the copy to the
