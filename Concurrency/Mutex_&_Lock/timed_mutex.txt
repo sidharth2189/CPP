@@ -1,0 +1,10 @@
+Using timed_mutex
+In the following, a short overview of the different available mutex types is given:
+
+mutex: provides the core functions lock() and unlock() and the non-blocking try_lock() 
+method that returns if the mutex is not available.
+recursive_mutex: allows multiple acquisitions of the mutex from the same thread.
+timed_mutex: similar to mutex, but it comes with two more methods try_lock_for() and 
+try_lock_until() that try to acquire the mutex for a period of time or until a moment 
+in time is reached.
+recursive_timed_mutex: is a combination of timed_mutex and recursive_mutex.
