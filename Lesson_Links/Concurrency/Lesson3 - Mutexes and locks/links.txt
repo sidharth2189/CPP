@@ -1,0 +1,15 @@
+1- Intro
+https://youtu.be/Ljt355vco_o
+
+2- Using mutexes to protect shared data
+https://youtu.be/iogv8Y2z7xw
+https://youtu.be/5TXfGthAhmU
+https://youtu.be/94DjTjTC8Nc
+
+3- Using locks to avoid deadlocks
+https://youtu.be/7C0a-LaXTXA
+https://youtu.be/h9x5dfXrm4I
+
+4- Lesson 3 Exercise
+Overview: https://youtu.be/vfNXDebmZIM
+Details: https://youtu.be/w4L17HaT2Xk
