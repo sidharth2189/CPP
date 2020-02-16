@@ -1,0 +1,10 @@
+Intro
+https://youtu.be/lMB4-WfLpqQ
+
+The monitor object pattern
+https://youtu.be/SrNBGRjsOa0
+https://youtu.be/KJidQhoCQb4
+
+Building a concurrent message queue
+https://youtu.be/DpzGiQDYUGE
+https://youtu.be/3-ei9nRojTE
