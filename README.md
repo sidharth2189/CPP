@@ -23,4 +23,15 @@
     - use mutexes and locks to safely access shared data from various threads
     - condition variable and message queues (implement a flexible message queue for flexible inter-thread communication)
 
+ 5) Test Driven Development
+    - Creating a binary tree with TDD
+
+ 6) Unit Testing
+    - [Introduction using gTest framework](https://www.youtube.com/watch?v=nbFXI9SDfbk&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=2)
+    - [Assertions, fatal and non-fatal failure](https://www.youtube.com/watch?v=nbFXI9SDfbk&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=2)
+    - [Writing unit test case](https://www.youtube.com/watch?v=x5_UxQ9wrH4&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=3)
+    - [Test Fixtures](https://www.youtube.com/watch?v=d_hZGBQrXcA&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=4)
+    - [Writing Mocks](https://www.youtube.com/watch?v=dLB2aDasVTg&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=5)
+
+
 [Reference](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213)
