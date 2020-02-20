@@ -12,6 +12,13 @@
 
     Other than ASSERT_TRUE() and ASSERT_FALSE(), there are other assertion mechanism in google test
     like EXPECT_EQ() and ASSERT_EQ(). On failure, EXPECT_EQ() is non-fatal where as ASSERT_EQ() is fatal.
+    
+    Equal              -> EXPECT_EQ() ASSERT_EQ()
+    Not equal          -> EXPECT_NE() ASSERT_NE()
+    Less than          -> EXPECT_LT() ASSERT_LT()
+    Less than equal    -> EXPECT_LE() ASSERT_LE()
+    Greater than       -> EXPECT_GT() ASSERT_GT()
+    Greater than equal -> EXPECT_GE() ASSERT_GE()
 */
 
 # include <iostream>
