@@ -24,7 +24,7 @@
     - condition variable and message queues (implement a flexible message queue for flexible inter-thread communication)
 
  5) Test Driven Development
-    - Creating a binary tree with TDD
+    - [Creating a binary tree with TDD](https://www.youtube.com/watch?v=pkdwtRAUIkE)
 
  6) Unit Testing
     - [Introduction using gTest framework](https://www.youtube.com/watch?v=nbFXI9SDfbk&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=2)
