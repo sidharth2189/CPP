@@ -12,9 +12,9 @@
 
 int minPieces(const std::vector<int>& original, const std::vector<int>& desired)
 {
-    int index; // index: position in original for a given elemnt in desired
-    int piece = original.size(); // piece: initialize no. of pieces of original vector
-    int vect_size = piece; // size of the vectors
+    int index; // position in original for a given element in desired
+    int piece = original.size(); // initialize no. of pieces of original vector
+    int vect_size = piece; // no. of elements in the vectors
 
     // Loop through the desired vector loop
     for (int i = 0 ; i < vect_size ; ++i)
