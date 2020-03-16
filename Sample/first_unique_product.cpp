@@ -1,3 +1,8 @@
+/*
+    Input: A vector of type string
+    Output: First element of vector that appears exactly once
+*/
+
 #include <stdexcept>
 #include <iostream>
 #include <string>
