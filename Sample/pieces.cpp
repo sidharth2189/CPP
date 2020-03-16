@@ -2,23 +2,24 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
-#include<algorithm> 
+#include <algorithm>
 
 int minPieces(const std::vector<int>& original, const std::vector<int>& desired)
 {
     //throw std::logic_error("Waiting to be implemented");
-    int piece, vect_size, index = 0;
+    int piece, vect_size, index;
     piece = original.size();
     vect_size = piece;
     for (int i = 0 ; i < vect_size ; ++i)
     {
-        if (original[i] == desired[i])
+        auto loc = std::find(original.begin(), original.end(), desired[i]);
+        index = std::distance(original.begin(), loc);
+        while (original[index + 1] == desired[i + 1])
+        {
             piece--;
-    }
-    vector([1:k-1 k+1:end])
-    if (std::includes(original[[1:i-1], original.[i+1:end], desired.begin(), desired.end()))
-    {
-        
+            i++;
+            index++;
+        }   
     }
     return piece;
 }
