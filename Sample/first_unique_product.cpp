@@ -6,11 +6,14 @@
 
 std::string firstUniqueProduct(const std::vector<std::string>& products)
 {
-    // throw std::logic_error("Waiting to be implemented");
     int val_count, index;
+
+    // Loop through vector to count appearances of each element
     for(index = 0; index < products.size(); index++)
     {
         val_count = std::count(products.begin(), products.end(), products[index]);
+
+        // Return the very first element that appears once
         if (val_count == 1)
         {
             return products[index];
