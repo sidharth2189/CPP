@@ -21,7 +21,7 @@ Explanation:
 class Solution {
 public:
     bool isHappy(int num) {
-        int a, new_num;
+        int a, new_num, count = 0;
         if (num == 1)
         {
             return true;
@@ -46,10 +46,15 @@ public:
                     num = num - a;
                 }
                 num = new_num;
-                if (num == 1)
+                if (num == 1 || num ==7)
                 {
                     return true;
                 }
+                else if (num < 10 && num != 1 && num != 7 )
+                {
+                    return false;
+                }
+                
             }
             return false;
         }
