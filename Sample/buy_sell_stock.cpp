@@ -59,15 +59,7 @@ int maxProfit(vector<int>& prices) {
                         if (next > start)
                         {
                             sum = sum + next - start;
-                        }/*
-                        if (next <= start)
-                        {
-                            sum = sum + 0;
                         }
-                        else
-                        {
-                            sum = sum + next - start;
-                        }*/
                         return sum;
                     }
                     next = prices[x];
