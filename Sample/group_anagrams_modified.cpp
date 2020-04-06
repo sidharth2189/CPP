@@ -54,7 +54,8 @@ public:
                 worst_new.push_back(x);
             }
 
-            worst_case_count = count_if(worst_new.begin(), worst_new.end(), [worst_new](string i){return count(worst_new.begin(), worst_new.end(), i) == 1;});
+            worst_case_count = count_if(worst_new.begin(), worst_new.end(), [worst_new]\
+            (string i){return count(worst_new.begin(), worst_new.end(), i) == 1;});
                 
             if (worst_case_count == worst_new.size())
             {
