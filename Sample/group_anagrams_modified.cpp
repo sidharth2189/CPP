@@ -53,19 +53,17 @@ public:
                 sort(x.begin(), x.end());
                 worst_new.push_back(x);
             }
-            for (int y = 0; y < worst_new.size(); y++)
-            {
-                part_result_worst.clear();
-                if (count(worst_new.begin(), worst_new.end(), worst_new[y]) == 1)
-                {
-                    worst_case_count++;
-                    part_result_worst.push_back(strs[y]);
-                    result.push_back(part_result_worst);
-                }
-            }
+
+            worst_case_count = count_if(worst_new.begin(), worst_new.end(), [worst_new](string i){return count(worst_new.begin(), worst_new.end(), i) == 1;});
                 
             if (worst_case_count == worst_new.size())
             {
+                for (auto y:strs)
+                {
+                    part_result_worst.push_back(y);
+                    result.push_back(part_result_worst);
+                    part_result_worst.clear();
+                }
                 return result;
             }
             
