@@ -52,7 +52,7 @@ public:
             retrieve = 0;
             while (S_new[count-1] == '#' && count > 0)
             {
-                if (S_new.size() > 0) {S_new.erase(S_new.begin()+count-1);}
+                if (count > 0) {S_new.erase(S_new.begin()+count-1);}
                 else {S_new.clear();}
                 count = S_new.size()-1;
                 flag++;
