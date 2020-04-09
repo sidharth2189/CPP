@@ -52,20 +52,21 @@ public:
             retrieve = 0;
             while (S_new[count-1] == '#' && count > 0)
             {
-                S_new.erase(S_new.begin()+count-1);
+                if (S_new.size() > 0) {S_new.erase(S_new.begin()+count-1);}
+                else {S_new.clear();}
                 count = S_new.size()-1;
                 flag++;
             }
             while (flag != 0 && count >= 0) 
             {
-                S_new.erase(S_new.begin()+count-1);
+                if (count > 0) {S_new.erase(S_new.begin()+count-1);}
+                else {S_new.clear();}
                 count = S_new.size();
                 flag--;
                 retrieve = 1;
             }
             if (retrieve == 0) { if (count > 0) {count--;} }
         }
-
         return S_new;
     }
 
@@ -85,9 +86,9 @@ public:
 int main()
 {
     /* Test cases - comment others to test one */ 
-    // string S = "a#c", T = "b"; // ans = False
+    string S = "a#c", T = "b"; // ans = False
     // string S = "ab#c", T = "ad#c"; // ans = True
-    string S = "ab##", T = "c#d#"; // ans = True
+    // string S = "ab##", T = "c#d#"; // ans = True
     // string S = "a##c", T = "#a#c"; // ans = True
 
     /* Result */
