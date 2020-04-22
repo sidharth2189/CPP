@@ -56,9 +56,10 @@ public:
             }
 
             int r, c = 0;
+            sum_val = grid[r][c];
             while (grid[r][c] != goal)
             {
-                if (r < row_size - motion[0] && c < col_size - motion[1])
+                if (r + motion[0] < row_size && c + motion[1] < col_size)
                 {
                     if (sum[r + motion[0]][c] > sum[r][c + motion[1]])
                     {
@@ -71,16 +72,18 @@ public:
                         r = r + motion[0];
                     }
                 }
-                else if (r == row_size - motion[0] && c < col_size - motion[1])
+                else if (r + motion[0] == row_size  && c + motion[1] < col_size)
                 {
                     sum_val = sum_val + grid[r][c + motion[1]];
                     c = c + motion[1];
                 }
-                else
+                else if (r + motion[0] < row_size && c + motion[1] == col_size)
                 {
                     sum_val = sum_val + grid[r + motion[0]][c];
                     r = r + motion[0];
                 }
+                else {}
+                // cout << "sum_val" << endl;
             }
         }
         else
