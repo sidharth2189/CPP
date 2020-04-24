@@ -22,88 +22,30 @@
 class Solution {
 public:
     int minPathSum(vector<vector<int>>& grid) {
-        int start = grid[0][0];
         int row_size = grid.size();
         int col_size = grid[0].size();
-        int goal = grid[col_size-1][row_size-1];
-        int sum_val = 0;
         
-        vector<int> motion{1, 1};
-        vector<vector<int>> sum = grid;
-        
-        if (row_size > 0 && col_size > 0)
-        {
-            for (int cb_col = col_size - 1; cb_col >= 0; cb_col--)
-            {
-                for (int cb_row = row_size  - 1; cb_row >= 0; cb_row--)
-                {                
-                    if (cb_row + 1 >= row_size && cb_col + 1 < col_size)
-                    {
-                        sum[cb_col][cb_row] = sum[cb_col][cb_row] + sum[cb_col + 1][cb_row];
-                    }
-                    else if (cb_row + 1 < row_size && cb_col + 1 >= col_size)
-                    {
-                        sum[cb_col][cb_row] = sum[cb_col][cb_row] + sum[cb_col][cb_row + 1];
-                    }
-                    else if (cb_row + 1 == row_size && cb_col + 1 == col_size) {}
-                    else
-                    {
-                         sum[cb_col][cb_row] = sum[cb_col][cb_row] + sum[cb_col][cb_row+1] + sum[cb_col+1][cb_row];
-                    }
-                    // cout << sum[cb_col][cb_row] << " ";
-                }
-                // cout << endl;
-            }
+        if (row_size == 0 && col_size == 0) {return 0;}
 
-            int r, c = 0;
-            sum_val = grid[r][c];
-            while (grid[r][c] != goal)
-            {
-                if (r + motion[0] < row_size && c + motion[1] < col_size)
-                {
-                    if (sum[r + motion[0]][c] > sum[r][c + motion[1]])
-                    {
-                        sum_val = sum_val + grid[r][c + motion[1]];
-                        c = c + motion[1];
-                    }
-                    else
-                    {
-                        sum_val = sum_val + grid[r + motion[0]][c];
-                        r = r + motion[0];
-                    }
-                }
-                else if (r + motion[0] == row_size  && c + motion[1] < col_size)
-                {
-                    sum_val = sum_val + grid[r][c + motion[1]];
-                    c = c + motion[1];
-                }
-                else if (r + motion[0] < row_size && c + motion[1] == col_size)
-                {
-                    sum_val = sum_val + grid[r + motion[0]][c];
-                    r = r + motion[0];
-                }
-                else {}
-                // cout << "sum_val" << endl;
-            }
-        }
-        else
+        for (int col = 0; col < col_size; col++)
         {
-            if (row_size == 0)
-            {
-                for (int count = 0; count < grid[0].size(); count++)
+            for (int row = 0; row < row_size; row++)
+            {                
+                if (row > 0 && col > 0)
                 {
-                    sum_val = sum_val + grid[0][count];
+                    grid[row][col] += min(grid[row-1][col], grid[row][col-1]);
                 }
-            }
-            else
-            {
-                for (int count = 0; count < grid.size(); count++)
+                else if (row > 0)
                 {
-                    sum_val = sum_val + grid[count][0];
+                    grid[row][col] += grid[row-1][col];
+                }
+                else if (col > 0)
+                {
+                    grid[row][col] += grid[row][col-1];
                 }
             }
         }
         
-        return sum_val;
+        return grid[row_size-1][col_size-1];
     }
 };
