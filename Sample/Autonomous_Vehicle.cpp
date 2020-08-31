@@ -3,9 +3,13 @@
 using namespace std;
 
 
-/* Imagine a fleet of 3 autonomous vehicles driving on a highway in a line. Every vehicle is able to control its actuators, but only the first in line is able to detect obsctacles. As a result, the rest of the vehicles have to follow its behavior - if the leader applies throttle it notifies the second vehicle (its successor) that it should apply throttle as well. The same happens for situation in which leader brakes.
+/* Imagine a fleet of 3 autonomous vehicles driving on a highway in a line. Every vehicle is able to control its actuators, 
+but only the first in line is able to detect obsctacles. As a result, the rest of the vehicles have to follow its behavior - 
+if the leader applies throttle it notifies the second vehicle (its successor) that it should apply throttle as well. 
+The same happens for situation in which leader brakes.
 
-One limitation is that one car can pass the information about throttle or brake only to one nearest vehicle that is behind. Since there are few vehicles, every car has to continiue  forwarding the information until the last vehicle has been notified about the action.
+One limitation is that one car can pass the information about throttle or brake only to one nearest vehicle that is behind. 
+Since there are few vehicles, every car has to continiue  forwarding the information until the last vehicle has been notified about the action.
 */
 
 // ------ TASK 1 ------
@@ -71,7 +75,9 @@ class Vehicle {
 
 
 // ------ TASK 5 ------
-/* Each vehicle driving in a line is different and requires different amount of throttle to be applied for sustaining the same speed and different amount of brake pressure to stop. Additionally, as we mentioned above, every vehicle has to be aware who is its successor (the vehicle behind) to be able to inform it about the state change. Implement "AutonomousVehicle" class which inherits from Vehicle interface and has:
+/* Each vehicle driving in a line is different and requires different amount of throttle to be applied for sustaining the same speed and 
+different amount of brake pressure to stop. Additionally, as we mentioned above, every vehicle has to be aware who is its successor (the vehicle behind) 
+to be able to inform it about the state change. Implement "AutonomousVehicle" class which inherits from Vehicle interface and has:
     - private member containing information about its type (type:
     VehicleType)
     - private member containing information about its state (type: VehicleState)
@@ -183,7 +189,8 @@ class VehicleFactory {
 
 
 // ------ TASK 7 ------
-/* Extend AutonomousVehicle class with a move constructor. Ensure that values of all the members of original object are reset (type UNKNOWN, state NOT_SET, successor ptr to nullptr, throttle and brake values zeroed). */
+/* Extend AutonomousVehicle class with a move constructor. Ensure that values of all the members of original object are reset 
+(type UNKNOWN, state NOT_SET, successor ptr to nullptr, throttle and brake values zeroed). */
 
 
 
@@ -200,7 +207,9 @@ int main(int argc, char** argv)
 
 
   // ------ TASK 10 ------
-  /* Create a loop within which you invoke ApplyThrottle on the leading vehicle, wait a second, invoke ApplyBreak on the leading vehicle and then one more time wait one second (perform 3 iterations). You can find expected output after main function marked as "FIRST VERSION EXPECTED OUTPUT". */
+  /* Create a loop within which you invoke ApplyThrottle on the leading vehicle, wait a second, invoke ApplyBreak on the 
+  leading vehicle and then one more time wait one second (perform 3 iterations). You can find expected output after main 
+  function marked as "FIRST VERSION EXPECTED OUTPUT". */
 
 
 
@@ -215,7 +224,10 @@ int main(int argc, char** argv)
 
 
   // ------ TASK 13 ------
-  /* Create a function called "ObserveStates" which runs in a separate thread. Its responsibility is to constantly monitor the state of all vehicles and to react on the state changes. If a state of a vehicle has changed, the function should print: "STATE OBSERVER: Vehicle <vehicle_type> changed state to <state_name>". You may find useful to implement an overloaded version of EnumToString function dedicated for VehicleState enum. */
+  /* Create a function called "ObserveStates" which runs in a separate thread. Its responsibility is to constantly monitor 
+  the state of all vehicles and to react on the state changes. If a state of a vehicle has changed, the function should print: 
+  "STATE OBSERVER: Vehicle <vehicle_type> changed state to <state_name>". You may find useful to implement an overloaded version 
+  of EnumToString function dedicated for VehicleState enum. */
 
 
 
