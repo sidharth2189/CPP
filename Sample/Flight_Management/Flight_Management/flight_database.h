@@ -18,10 +18,10 @@ namespace FlightManagementSystem
 		void DisplayAllTrips();
 		void UpdateFareByTrip(const std::string flight_number, float air_fare);
 		float FindAverageCostOfAllTrips();
+		float FindMinFareBetweenCities(const std::string origin_city, const std::string destination_city);
 		std::shared_ptr<FlightTrip> FindFlightByNumber(const std::string flight_number); 	// Return the instance(s)
 		// ---------- yet to implement ------------------------ //
 		std::shared_ptr<FlightTrip> FindFlightsByOriginCity(const std::string origin_city); // Return the instance(s)
-		float FindMinFareBetweenCities(const std::string origin_city, const std::string destination_city);
 		float FindMaxFareByOperator(const std::string flight_operator);
 		void UpdateFareByOperator(const std::string flight_operator);
   

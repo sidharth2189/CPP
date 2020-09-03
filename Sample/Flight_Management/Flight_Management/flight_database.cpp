@@ -98,7 +98,6 @@ std::shared_ptr<FlightTrip> FlightTripDatabase:: FindFlightByNumber(const std::s
         std::cout << "\nNo such flight in database" << std::endl;
         return nullptr;
     }
-    
 }
 
 float FlightTripDatabase:: FindAverageCostOfAllTrips()
@@ -128,7 +127,43 @@ float FlightTripDatabase:: FindAverageCostOfAllTrips()
 float FlightTripDatabase:: FindMinFareBetweenCities(const std::string origin_city, 
 const std::string destination_city)
 {
-    // Add logic
+    if (trip_map.empty())
+    {
+        std::cout << "\nNo trips in database" << std::endl;
+        return 0.0;
+    }
+    else
+    {
+        float MinFareBetweenCities = 0.0;
+        int counter = 0;
+        bool flag = 'False';
+        std::unordered_map<std::string, std::shared_ptr<FlightTrip>>::iterator it;
+        for (it=trip_map.begin(); it!=trip_map.end(); ++it)
+        {
+            if((it->second->origin_city == origin_city) && (it->second->destination_city == destination_city))
+            {
+                if (flag == 'False')
+                {
+                    MinFareBetweenCities = it->second->air_fare;
+                    flag = 'True';
+                }
+                else if (MinFareBetweenCities > it->second->air_fare)
+                {
+                    MinFareBetweenCities = it->second->air_fare;
+                }
+            }
+            else
+            {
+                counter++;
+            }
+        }
+
+        if (counter == trip_map.size())
+        {
+            std::cout << "\nNo trips in database" << std::endl;
+        }
+        return MinFareBetweenCities;
+    }
 }
 
 float FlightTripDatabase:: FindMaxFareByOperator(const std::string flight_operator)
