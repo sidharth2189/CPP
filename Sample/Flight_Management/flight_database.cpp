@@ -113,14 +113,13 @@ float FlightTripDatabase:: FindAverageCostOfAllTrips()
         float CostOfAllTrips = 0.0;
         float AverageCostOfAllTrips = 0.0;
         std::unordered_map<std::string, std::shared_ptr<FlightTrip>>::iterator it;
-        std::cout << "\nThe flight detail(s) is/are : " << std::endl; 
-        std::cout << "\tFLIGHT NUMBER\t\tDETAILS" << std::endl;
 
         for (it=trip_map.begin(); it!=trip_map.end(); ++it) 
         { 
             CostOfAllTrips = CostOfAllTrips + it->second->air_fare;
         } 
         AverageCostOfAllTrips = CostOfAllTrips/trip_map.size();
+        std::cout << "Average cost of all trips is " << AverageCostOfAllTrips << std::endl;
         return AverageCostOfAllTrips;
     }
 }
@@ -163,6 +162,12 @@ const std::string destination_city)
         {
             std::cout << "\nNo trips in database" << std::endl;
         }
+        else
+        {
+            std::cout << "\nMinimum fare between " << origin_city << " and " << destination_city 
+            << " is " << MinFareBetweenCities << std::endl;
+        }
+        
         return MinFareBetweenCities;
     }
 }
@@ -204,6 +209,12 @@ float FlightTripDatabase:: FindMaxFareByOperator(const std::string flight_operat
         {
             std::cout << "\nNo trips in database" << std::endl;
         }
+        else
+        {
+            std::cout << "\nMaximum fare by " << flight_operator 
+            << " is " << MaxFareByOperator << std::endl;
+        }
+        
         return MaxFareByOperator;
     }
 }
