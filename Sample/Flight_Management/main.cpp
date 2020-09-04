@@ -72,10 +72,10 @@ int main()
 	std::shared_ptr<FlightTrip> ft_ptr4 = ftd.FindFlightByNumber("SG-620");
 
 	// Find flights by origin city
-	std::vector<std::shared_ptr<FlightTrip>> vec_ft_ptr = ftd.FindFlightsByOriginCity("Pune");
+	std::vector<std::shared_ptr<FlightTrip>> vec_ft_ptr1 = ftd.FindFlightsByOriginCity("Pune");
 
 	// Find non-existent flights by origin city
-	std::vector<std::shared_ptr<FlightTrip>> vec_ft_ptr = ftd.FindFlightsByOriginCity("Kochi");
+	std::vector<std::shared_ptr<FlightTrip>> vec_ft_ptr2 = ftd.FindFlightsByOriginCity("Kochi");
 
 	/**** Test End****/
 }

@@ -54,8 +54,8 @@ void FlightTripDatabase:: DisplayAllTrips()
 
         for (it=trip_map.begin(); it!=trip_map.end(); ++it) 
         { 
-            std::cout << '\t' << it->first << '\t\t' << it->second->origin_city << '\t\t' 
-            << it->second->destination_city <<'\t\t' << it->second->flight_operator <<'\t\t' 
+            std::cout << "\t" << it->first << "\t\t" << it->second->origin_city << "\t\t" 
+            << it->second->destination_city << "\t\t" << it->second->flight_operator << "\t\t"
             << it->second->air_fare << std::endl;
         } 
         std::cout << std::endl;
@@ -137,16 +137,16 @@ const std::string destination_city)
     {
         float MinFareBetweenCities = 0.0;
         int counter = 0;
-        bool flag = 'False';
+        bool flag = false;
         std::unordered_map<std::string, std::shared_ptr<FlightTrip>>::iterator it;
         for (it=trip_map.begin(); it!=trip_map.end(); ++it)
         {
             if((it->second->origin_city == origin_city) && (it->second->destination_city == destination_city))
             {
-                if (flag == 'False')
+                if (flag == false)
                 {
                     MinFareBetweenCities = it->second->air_fare;
-                    flag = 'True';
+                    flag = true;
                 }
                 else if (MinFareBetweenCities > it->second->air_fare)
                 {
@@ -178,16 +178,16 @@ float FlightTripDatabase:: FindMaxFareByOperator(const std::string flight_operat
     {
         float MaxFareByOperator = 0.0;
         int counter = 0;
-        bool flag = 'False';
+        bool flag = false;
         std::unordered_map<std::string, std::shared_ptr<FlightTrip>>::iterator it;
         for (it=trip_map.begin(); it!=trip_map.end(); ++it)
         {
             if(it->second->flight_operator == flight_operator)
             {
-                if (flag == 'False')
+                if (flag == false)
                 {
                     MaxFareByOperator = it->second->air_fare;
-                    flag = 'True';
+                    flag = true;
                 }
                 else if (MaxFareByOperator < it->second->air_fare)
                 {
@@ -258,8 +258,8 @@ std::vector<std::shared_ptr<FlightTrip>> FlightTripDatabase:: FindFlightsByOrigi
         {
             if(it->second->origin_city == origin_city)
             {
-                std::cout << '\t' << it->first << '\t\t' << it->second->origin_city << '\t\t' 
-                << it->second->destination_city <<'\t\t' << it->second->flight_operator <<'\t\t' 
+                std::cout << "\t" << it->first << "\t\t" << it->second->origin_city << "\t\t" 
+                << it->second->destination_city << "\t\t" << it->second->flight_operator << "\t\t" 
                 << it->second->air_fare << std::endl;
                 FlightsByOriginCity.push_back(it->second);
             }
