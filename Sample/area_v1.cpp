@@ -217,10 +217,8 @@ class AreaCalculator
     public:
     static AreaCalculator *getInstance(Points &p) {
         if (!instance)
-        {
-            instance = new AreaCalculator(p);
-            return instance;
-        }
+        instance = new AreaCalculator(p);
+        return instance;
     }
 
     float getCumArea() {
