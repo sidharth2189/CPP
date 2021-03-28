@@ -20,8 +20,6 @@
     
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
-
-    Link to code on godbolt: https://godbolt.org/z/3WKedboc7
 */
 
 #include <iostream>
