@@ -28,9 +28,6 @@
 #include <vector>
 #include <math.h>
 #include <algorithm>
-#include<iterator>
-#include <memory>
-#include <functional>
 
 namespace AreaCalculatorApp
 {
@@ -336,7 +333,7 @@ void traverseRobot()
         std::cout << points.at(i).x << points.at(i).y << std::endl;
 
         // If point is added
-        if (i != NULL)
+        if (i)
         {
             std::mutex lock_area;
             lock_area.lock();
