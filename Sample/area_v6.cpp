@@ -1,4 +1,7 @@
 /*  
+    Author: Sidharth Das
+    March, 2021
+    
     Implement a data model, which represents a 2D path of 
     variable length. Move the robot along a new path with 
     the folllowing data https://pastebin.com/raw/mLc80Pen. 
@@ -20,6 +23,8 @@
     
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
+
+    Online compiler code link: https://godbolt.org/z/Ex1fqqb13
 */
 
 #include <iostream>
