@@ -24,7 +24,7 @@
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
 
-    Online compiler code link: https://godbolt.org/z/Ex1fqqb13
+    Online compiler link: https://godbolt.org/z/3h3W4xMxW
 */
 
 #include <iostream>
@@ -89,18 +89,18 @@ const std::vector<Points> points{
 // Vector of traversed points
 std::vector<Points>  traversal_points;
 
-// Is area calculation applicable
-bool isCalculateArea = false;
-
-// Area calculation
-class AreaCalculator
-{
 // Variable for area at each step
 static float area;
 
 // Index of traversed points 
 static int index;
 
+// Is area calculation applicable
+bool isCalculateArea = false;
+
+// Area calculation
+class AreaCalculator
+{
 // Flag for same point
 bool is_same_point;
 
