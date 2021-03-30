@@ -24,7 +24,7 @@
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
 
-    Online compiler code link: https://godbolt.org/z/Mxo68r3o9
+    Online compiler: https://godbolt.org/z/fWPrfjTcY
 */
 
 #include <iostream>
@@ -97,6 +97,9 @@ static int index;
 
 // Is area calculation applicable
 static bool isCalculateArea = false;
+
+// Mutex to lock area calculation bool
+std::mutex area_calc;
 
 // Area calculation
 class AreaCalculator
@@ -247,6 +250,7 @@ int areaValidator()
     {
         area_case = 2;
     }
+    std::cout << "area_case " << area_case << std::endl;
 
     // Return area case
     return area_case;
@@ -292,12 +296,6 @@ void calculateArea()
            // Total area
            area= area + area_step;
 
-           // Reset isCalculateArea
-           std::mutex lock_calc;
-           lock_calc.lock();
-           isCalculateArea = false;
-           lock_calc.unlock();
-
            // Print area
            std::cout << "The updated area is " << area << std::endl;
 
@@ -336,10 +334,15 @@ void traverseRobot()
         // If point is added
         if (i)
         {
-            std::mutex lock_area;
-            lock_area.lock();
+            area_calc.lock();
             isCalculateArea = true;
-            lock_area.unlock();
+            area_calc.unlock();
+        }
+        else
+        {
+            area_calc.lock();
+            isCalculateArea = false;
+            area_calc.unlock();
         }
     }
 }
