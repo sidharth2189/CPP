@@ -24,11 +24,11 @@
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
 
-    Online compiler code ling: https://godbolt.org/z/G16aj3s8T
+    Online compiler code ling: https://godbolt.org/z/aGczrjMKP
 */
 
 #include <iostream>
-#include <thread>
+#include <future>
 #include <vector>
 #include <cmath>
 #include <algorithm>
@@ -343,15 +343,14 @@ void traverseRobot()
 int main()
 {
     // Instances
-    AreaCalculatorApp::RobotMover rc;
+    AreaCalculatorApp::RobotMover rm;
 
     // Move robot
-    rc.traverseRobot();
+    rm.traverseRobot();
 
     // Calculate area in a thread   
-    std::thread areaCalc(&AreaCalculatorApp::AreaCalculator::calculateArea, 
-                            AreaCalculatorApp::AreaCalculator());  
-    areaCalc.join();
+    auto handle = std::async(&AreaCalculatorApp::AreaCalculator::calculateArea, 
+                            AreaCalculatorApp::AreaCalculator());
 
     // Print cumulative area after completion
     std::cout << "the final area is " << 
