@@ -24,14 +24,14 @@
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
 
-    Online compiler link: https://godbolt.org/z/3h3W4xMxW
+    Online compiler code link: https://godbolt.org/z/Mxo68r3o9
 */
 
 #include <iostream>
 #include <thread>
 #include <future>
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <algorithm>
 
 namespace AreaCalculatorApp
@@ -96,14 +96,11 @@ static float area;
 static int index;
 
 // Is area calculation applicable
-bool isCalculateArea = false;
+static bool isCalculateArea = false;
 
 // Area calculation
 class AreaCalculator
 {
-// Flag for same point
-bool is_same_point;
-
 // Count of a given point in traversal point
 // inside index
 int count_point(Points point)
@@ -122,16 +119,15 @@ int count_point(Points point)
 }
 
 // Check if iterator is an occurence of current point
-std::vector<Points>::iterator isSamePoint (std::vector<Points>::iterator iter)
+bool isSamePoint (std::vector<Points>::iterator iter)
 {
-    is_same_point = false;
     // Current point
     Points current_point = traversal_points.at(index-1);
     if (iter->x == current_point.x && iter->y == current_point.y)
     {
-        is_same_point = true;
+        return true;
     }
-    return iter;
+    return false;
 }
 
 // Neighbour of a current point
@@ -166,9 +162,9 @@ bool notNeighbour()
         // Find indices of occurence of current point in traversal_points
         std::vector<int> current_instance_indices;
         std::vector<Points>::iterator iter = traversal_points.begin();
-        while (isSamePoint(iter) != traversal_points.begin()+index)
+        while (iter != traversal_points.begin()+index)
         {
-            if (is_same_point)
+            if (isSamePoint(iter))
             {
                 current_instance_indices.push_back(
                     std::distance(traversal_points.begin(), iter));
