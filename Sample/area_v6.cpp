@@ -24,7 +24,7 @@
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
 
-    Online compiler code ling: https://godbolt.org/z/aGczrjMKP
+    Online compiler code ling: https://godbolt.org/z/Yahfdr4Er
 */
 
 #include <iostream>
@@ -349,8 +349,10 @@ int main()
     rm.traverseRobot();
 
     // Calculate area in a thread   
-    auto handle = std::async(&AreaCalculatorApp::AreaCalculator::calculateArea, 
+    std::thread areaCalc(&AreaCalculatorApp::AreaCalculator::calculateArea, 
                             AreaCalculatorApp::AreaCalculator());
+
+    areaCalc.join();
 
     // Print cumulative area after completion
     std::cout << "the final area is " << 
