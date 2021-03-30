@@ -24,7 +24,7 @@
     Assumptions should be explained directly in the code. 
     Limitations with regards to edge cases should be very briefly described.
 
-    Online compiler link: https://godbolt.org/z/s7WoEf98b
+    Online compiler code ling: https://godbolt.org/z/G16aj3s8T
 */
 
 #include <iostream>
@@ -100,8 +100,8 @@ static bool isCalculateArea = false;
 // Area calculation
 class AreaCalculator
 {
-// Count of a given point in traversal point
-// inside index
+// Count of repetition given point
+// in traversal point inside index
 int count_point(Points point)
 {
     std::vector<Points>::iterator ptr;
@@ -144,7 +144,7 @@ bool notNeighbour()
     // Point before current point
     Points bfr_current_point = traversal_points.at(index-2);
 
-    // Count of current point
+    // Count of repetition of current point
     int count_current = count_point(current_point);
 
     // Single occurrence of current point
@@ -212,7 +212,7 @@ int areaValidator()
     // Intitate area case variable
     int area_case = -1;
 
-    // Count of next point (index) in traversal_points
+    // Count of repetition of next point (index) in traversal_points
     int count_next = count_point(traversal_points.at(index));
     
     /*
