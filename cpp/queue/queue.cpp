@@ -26,8 +26,8 @@ T Qvs<T>::front() // Return first element
 }
 
 template <typename T>
-void Qvs<void()>::print_q() // Print queue
+void Qvs<T>::print_q() // Print queue
 {
-    for (auto &itr: queue_) {std::cout << itr << std::endl;}
+    for (T itr: queue_) {std::cout << itr << std::endl;}
     std::cout << "-----end-----" << std::endl;
 }

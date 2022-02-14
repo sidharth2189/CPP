@@ -1,4 +1,3 @@
-#include <iostream>
 #include "queue.h"
 
 int main()
@@ -19,5 +18,4 @@ int main()
 
     // print queue
     q.print_q();
-
 }
