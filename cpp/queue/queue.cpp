@@ -1,7 +1,5 @@
-#include "queue.h"
-
 template <typename T>
-void Qvs<T>::push(T a) // Add an element at the end
+void Qvs<T>::push(T const& a) // Add an element at the end
 {
     // mtx.lock();   // uncomment if datastructure is not thread safe
     queue_.emplace_back(a);
@@ -14,7 +12,6 @@ void Qvs<T>::pop() // remove first element
     // mtx.lock();   // uncomment if datastructure is not thread safe
     queue_.erase(queue_.begin());
     // mtx.unlock(); // uncomment if datastructure is not thread safe
-
 }
 
 template <typename T>

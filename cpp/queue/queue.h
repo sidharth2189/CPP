@@ -11,9 +11,11 @@ class Qvs
     // std::mutex mtx;
 public:
     Qvs() = default;
-    void push(T element);
+    void push(T const&);
     void pop();
     T front();
     void print_q();
     ~Qvs();
 };
+
+#include "queue.cpp"
