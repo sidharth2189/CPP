@@ -1,7 +1,7 @@
 #include "queue.h"
 
 template <typename T>
-void queue::push(T a)
+void Qvs<T>::push(T a) // Add an element at the end
 {
     // mtx.lock();   // uncomment if datastructure is not thread safe
     queue_.emplace_back(a);
@@ -9,19 +9,25 @@ void queue::push(T a)
 }
 
 template <typename T>
-void queue::pop()
+void Qvs<T>::pop() // remove first element
 {
     // mtx.lock();   // uncomment if datastructure is not thread safe
-    T a = queue_.begin();
-    queue_.erase(a);
+    queue_.erase(queue_.begin());
     // mtx.unlock(); // uncomment if datastructure is not thread safe
 
 }
 
 template <typename T>
-T queue::front()
+T Qvs<T>::front() // Return first element
 {
     // mtx.lock();   // uncomment if datastructure is not thread safe
     return queue_.begin();
     // mtx.unlock(); // uncomment if datastructure is not thread safe
+}
+
+template <typename T>
+void Qvs<void()>::print_q() // Print queue
+{
+    for (auto &itr: queue_) {std::cout << itr << std::endl;}
+    std::cout << "-----end-----" << std::endl;
 }

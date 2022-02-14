@@ -1,16 +1,10 @@
 #include <iostream>
 #include "queue.h"
 
-void print(T q)
-{
-    for (auto &itr: q) {std::cout << itr << std::endl;}
-    std::cout << "-----end-----" << std::endl;
-}
-
 int main()
 {
     // Create a queue
-    queue q;
+    Qvs<int> q;
 
     // Add elements to queue
     q.push(1);
@@ -18,12 +12,12 @@ int main()
     q.push(3);
 
     // print queue
-    print(q);
+    q.print_q();
     
     // Remove an first item from queue
     q.pop();
 
     // print queue
-    print(q);
+    q.print_q();
 
 }

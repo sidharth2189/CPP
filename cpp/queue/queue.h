@@ -3,7 +3,7 @@
 //namespace Qe
 //{
     template <typename T>
-    class queue
+    class Qvs
     {
     private:
         std::vector<T> queue_;
@@ -12,6 +12,7 @@
         void push(T element);
         void pop();
         T front();
+        void print_q();
     }; 
 //}
 
