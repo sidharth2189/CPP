@@ -55,7 +55,6 @@ int main()
     object->setNumber(42);
     object->~MyClass();
     free(memory);
-    return 0;
 
     return 0;
 }
