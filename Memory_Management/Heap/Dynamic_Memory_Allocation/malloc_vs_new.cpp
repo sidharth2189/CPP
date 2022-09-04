@@ -48,6 +48,14 @@ int main()
     myClass->setNumber(42); // works as expected
     delete myClass;
 
+    // Separation of memory allocation from object construction
+    void *memory = malloc(sizeof(MyClass)); // Allocate memory 
+    // "Placement new" constructs object at preallocated memory
+    MyClass *object = new (memory) MyClass;
+    object->setNumber(42);
+    object->~MyClass();
+    free(memory);
+
     return 0;
 }
 
