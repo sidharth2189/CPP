@@ -1,0 +1,11 @@
+Introduction
+In this series of exercises, we will look into the various uses of move semantics in C++.
+
+First, we will be looking at two ways to pass large chunks of data between functions without using move semantics.
+Second, we will be using move semantics implicitly as a built-in feature of the STL.
+Third, we will create a proprietary class, where copy semantics has been intentionally disabled to enforce the use of move semantics
+Exercise 1: Passing data between functions without move semantics - exercise_1/mv_exercise_1.cpp
+
+Exercise 2: Use move semantics implicitly as part of the STL - exercise_2/mv_exercise_2.cpp
+
+Exercise 3: Instantiate a proprietary class for managing a template-based heap resource using both copy and move semantics - exercise_3/mv_exercise_3.cpp
