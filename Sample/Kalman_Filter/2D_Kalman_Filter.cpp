@@ -24,18 +24,18 @@ tuple<MatrixXf, MatrixXf> kalman_filter(MatrixXf x, MatrixXf P, MatrixXf u, Matr
         y << (Z - H * x);
         
         MatrixXf S(1, 1);
-        S << (H * P * H.transpose() + R);
+        S << H * P * H.transpose() + R;
         
         MatrixXf K(2, 1);
-        K << (P * H.transpose() * S.inverse());
+        K << P * H.transpose() * S.inverse();
         
-        x = x + K * y;
-        P = (I - K * H) * P;
+        x << x + (K * y);
+        P << (I - (K * H)) * P;
         
         // Prediction
         // Code the Prediction
         // Compute x and P
-        x << F * x + u;
+        x << (F * x) + u;
         P << F * P * F.transpose();
 
     }
