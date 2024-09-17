@@ -6,7 +6,7 @@
     - [A*](/A_Star/) search (path planning through an ASCII Keyboard)
     - [Multifiles](/Multi_file/) (header files, pointers (with various object types and with functions), build tools, maps and classes)
 
- 2) Object oriented approach
+ 2) [Object oriented approach](/class/) and [advanced concepts](/Advanced_OOP/)
     - Structures, Classes, members, constructors, initialization, encapsulation, access specifiers
     - Scope resolution, Accesor/Mutator functions, abstraction, private/static method
  
