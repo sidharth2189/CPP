@@ -38,5 +38,6 @@ The repository aims at demostrating various C++ topics through sample code.
    - [Kalmant filter](/Sample/Kalman_Filter/)
    - [Occupancy grid mapping](/Sample/Occupancy_grid_mapping/)
    - [Monte carlo localization](/Sample/MCL/)
+   - [Autonomous vehicle](/Sample/More/Autonomous_Vehicle.cpp)
 
 [Reference](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213)
