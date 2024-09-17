@@ -1,3 +1,7 @@
+### Problem statement
+<img src="problem_description.jpg"/>
+
+
 ### How to run the program on Windows
 
 * Navigate to the folder on a terminal.
