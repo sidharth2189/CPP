@@ -1,5 +1,5 @@
 ## CPP
-The repository aims at demostrating various C++ topics through sample code.
+The repository aims at familiarization of C++ topics while demonstrating through code.
 
 * Foundations
    - [Introduction](/Fundamentals/) (store data, vectors, control loops, functions, read from file, formatting printed board)
