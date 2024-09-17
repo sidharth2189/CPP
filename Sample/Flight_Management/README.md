@@ -2,7 +2,7 @@
 <img src="problem_description.jpg"/>
 
 
-### How to run the program on Windows
+### How to run
 
 * Navigate to the folder on a terminal.
 * To compile source code and create executable, enter the command in terminal: 
