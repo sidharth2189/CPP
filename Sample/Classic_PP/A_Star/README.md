@@ -5,11 +5,11 @@ The purpose of this lab is to find the shortest path for a robot moving inside a
 ### Given
 #### Grid(5x6):
 
-0 1 0 0 0 0
-0 1 0 0 0 0
-0 1 0 0 0 0
-0 1 0 0 0 0
-0 0 0 1 1 0
+0 1 0 0 0 0 <br />
+0 1 0 0 0 0 <br />
+0 1 0 0 0 0 <br />
+0 1 0 0 0 0 <br />
+0 0 0 1 1 0 <br />
 
 Where 1's represent obstacles and 0's represent free space.
 
