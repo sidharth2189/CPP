@@ -54,6 +54,9 @@ void search(Map map, Planner planner)
 {
     // Initial open list contains start position
     vector<vector<int>> open{{0, planner.start[0], planner.start[1]}};
+    
+    // Keep track of traversed cells in order to avoid expanding them again
+    vector<vector<int>> traversed;
      
     while (!open.empty())
     {
@@ -71,23 +74,27 @@ void search(Map map, Planner planner)
             int x = open[0][1] + planner.movements[i][0];
             int y = open[0][2] + planner.movements[i][1];
             vector<int> cell{g, x, y};
+            vector<int> loc{x, y};
         
-            // If explored cell is within grid, not closed and not already in open list, then add to open list.
+            // If explored cell is within grid, not closed, not already in open list 
+            // and not already traversed, then add to open list.
             if ((x < map.mapHeight) && (x >= 0) && (y < map.mapWidth) && (y >= 0) && (map.grid[x][y] != 1) && 
-            (find(open.begin(), open.end(), cell) == open.end()))
+            (find(open.begin(), open.end(), cell) == open.end()) && 
+            (find(traversed.begin(), traversed.end(), loc) == traversed.end()))
             {
                 open.push_back(cell);
+                traversed.push_back(loc);
             }
         }
     
         // Remove expanded cell after exploration
         open.erase(open.begin());
-    }
 
-    // Roadblock
-    if (open.empty())
-    {
-        cout << "Failed to reach the goal" << endl;
+        // Roadblock
+        if (open.empty())
+        {
+            cout << "Failed to reach the goal" << endl;
+        }
     }
 }
 
