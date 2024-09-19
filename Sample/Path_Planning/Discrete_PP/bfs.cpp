@@ -49,7 +49,8 @@ void print2DVector(T Vec)
 }
 
 /*#### TODO: Code the search function which will generate the expansion list ####*/
-// You are only required to print the final triplet values
+// Print the final triplet values
+// Print the expansion 2D vector
 void search(Map map, Planner planner)
 {
     // Initial open list contains start position
