@@ -56,13 +56,23 @@ void search(Map map, Planner planner)
     vector<vector<int>> open{{0, planner.start[0], planner.start[1]}};
     
     // Keep track of traversed cells in order to avoid expanding them again
-    vector<vector<int>> traversed;
+    vector<vector<int>> traversed{{planner.start[0], planner.start[1]}};
+
+    // Expansion list with initial cell values as -1 and start position as 0
+    int expand = 0;
+    vector<vector<int>> expansion(map.mapHeight, vector<int> (map.mapWidth, -1));
+    expansion[planner.start[0]][planner.start[1]] = expand;
      
     while (!open.empty())
     {
+        // Expansion list
+        expansion[open[0][1]][open[0][2]] = expand;
+        expand++;
+        
         // Expand first cell in open. If cell to be expanded is the goal, break.
         if ((open[0][1] == planner.goal[0]) && (open[0][2] == planner.goal[1]))
         {
+            // Print path cost and goal
             cout << open[0][0] << " " << open[0][1] << " " << open[0][2] << endl;
             break;
         }
@@ -86,7 +96,7 @@ void search(Map map, Planner planner)
                 traversed.push_back(loc);
             }
         }
-    
+
         // Remove expanded cell after exploration
         open.erase(open.begin());
 
@@ -94,8 +104,13 @@ void search(Map map, Planner planner)
         if (open.empty())
         {
             cout << "Failed to reach the goal" << endl;
+            break;
         }
+
     }
+
+    // Print cell expansion list
+    print2DVector(expansion);
 }
 
 int main()
