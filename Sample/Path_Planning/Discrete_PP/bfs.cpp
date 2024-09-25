@@ -26,7 +26,7 @@ public:
     int goal[2] = { mapHeight - 1, mapWidth - 1 };
     int cost = 1;
 
-    string movements_arrows[4] = { "^", "<", "v", ">" };
+    vector<char> movements_arrows = { '^', '<', 'v', '>' };
 
     vector<vector<int> > movements{
         { -1, 0 },
@@ -48,9 +48,7 @@ void print2DVector(T Vec)
     }
 }
 
-/*#### TODO: Code the search function which will generate the expansion list ####*/
-// Print the final triplet values
-// Print the expansion 2D vector
+/* #### TODO: Modify the search function and generate the policy vector #### */
 void search(Map map, Planner planner)
 {
     // Initial open list contains start position
@@ -62,7 +60,13 @@ void search(Map map, Planner planner)
     // Expansion list with initial cell values as -1 and start position as 0
     int expand = 0;
     vector<vector<int>> expansion(map.mapHeight, vector<int> (map.mapWidth, -1));
-    expansion[planner.start[0]][planner.start[1]] = expand;
+    
+    // Policy list with initial values as "-"
+    vector<vector<char>> policy(map.mapHeight, vector<char> (map.mapWidth, '-'));
+    policy[planner.goal[0]][planner.goal[1]] = '*';
+    
+    // Create action array filled with -1
+    vector<vector<int> > action(map.mapHeight, vector<int>(map.mapWidth, -1));
      
     while (!open.empty())
     {
@@ -74,7 +78,7 @@ void search(Map map, Planner planner)
         if ((open[0][1] == planner.goal[0]) && (open[0][2] == planner.goal[1]))
         {
             // Print path cost and goal
-            cout << open[0][0] << " " << open[0][1] << " " << open[0][2] << endl;
+            //cout << open[0][0] << " " << open[0][1] << " " << open[0][2] << endl;
             break;
         }
         
@@ -95,7 +99,9 @@ void search(Map map, Planner planner)
             {
                 open.push_back(cell);
                 traversed.push_back(loc);
+                action[x][y] = i;
             }
+    
         }
 
         // Remove expanded cell after exploration
@@ -111,7 +117,25 @@ void search(Map map, Planner planner)
     }
 
     // Print cell expansion list
-    print2DVector(expansion);
+    //print2DVector(expansion);
+    
+    // Print the path with arrows
+    // Going backward
+    int x = planner.goal[0];
+    int y = planner.goal[1];
+    int x2, y2;
+    policy[x][y] = '*';
+
+    while (x != planner.start[0] or y != planner.start[1]) 
+    {
+        x2 = x - planner.movements[action[x][y]][0];
+        y2 = y - planner.movements[action[x][y]][1];
+        policy[x2][y2] = planner.movements_arrows[action[x][y]];
+        x = x2;
+        y = y2;
+    }
+    print2DVector(policy);
+    //print2DVector(action);
 }
 
 int main()
