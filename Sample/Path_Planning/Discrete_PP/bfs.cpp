@@ -70,6 +70,9 @@ void search(Map map, Planner planner)
      
     while (!open.empty())
     {
+        // Sort open list
+        sort(open.begin(), open.end());
+        
         // Expansion list
         expansion[open[0][1]][open[0][2]] = expand;
         expand++;
@@ -117,7 +120,7 @@ void search(Map map, Planner planner)
     }
 
     // Print cell expansion list
-    //print2DVector(expansion);
+    print2DVector(expansion);
     
     // Print the path with arrows
     // Going backward
