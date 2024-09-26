@@ -60,7 +60,12 @@ void print2DVector(T Vec)
 void search(Map map, Planner planner)
 {
     // Initial open list contains start position
-    vector<vector<int>> open{{0, 0, planner.start[0], planner.start[1]}};
+    vector<vector<int>> open{
+        {map.heuristic[planner.start[0]][planner.start[1]], 
+        0, 
+        planner.start[0], 
+        planner.start[1]}
+    };
     
     // Keep track of traversed cells in order to avoid expanding them again
     vector<vector<int>> traversed{{planner.start[0], planner.start[1]}};
@@ -78,6 +83,9 @@ void search(Map map, Planner planner)
      
     while (!open.empty())
     {
+        // Sort open list
+        sort(open.begin(), open.end());
+        
         // Expansion list
         expansion[open[0][2]][open[0][3]] = expand;
         expand++;
