@@ -33,7 +33,7 @@ Up(^) - left(<) - down(v) - right(>)
 #### Heuristic Vector
 [Manhattan](https://en.wikipedia.org/wiki/Taxicab_geometry)
 
-### Functions in the code
+#### Functions in the code
 * [A*](../Discrete_PP/a_star.cpp)
 * 3 New functions in Map class
     * ```GetMap``` function which reads the map.txt log odds values and assign them the map variable.
@@ -45,3 +45,6 @@ x<sub>d</sub> = x<sub>goal</sub> - x<sub>cellposition</sub><br />
 y<sub>d</sub> = y<sub>goal</sub> - y<sub>cellposition</sub>
 
 Manhattan distance d = |x<sub>d</sub>| + |y<sub>d</sub>|
+<br />
+<br />
+[Reference](https://github.com/sidharth2189/RoboND-A-Visualization)
