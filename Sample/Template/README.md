@@ -13,7 +13,7 @@ Create and build a multifile CPP project.
     │   ├── sum.cpp                    # Sum file
     │   ├── sum.h                      # Sum file   
     ├── CMakeLists.txt                 # Build instructions                            
-    └── 
+    └── README.md
 
 ### How to run
 In terminal (powershell for e.g.),
