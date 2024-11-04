@@ -17,7 +17,7 @@ Create and build a multifile CPP project with unit test.
     │   ├── test_sum.cpp               # Source file for unit tests
     │   ├── CMakeLists.txt             # Build instructions at test level   
     ├── CMakeLists.txt                 # Build instructions at project level                           
-    └── README.md
+    └── README.md                      # README file
 
 ### How to run
 In terminal (powershell for e.g.),
