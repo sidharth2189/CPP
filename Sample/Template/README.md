@@ -28,13 +28,13 @@ In terminal (powershell for e.g.),
 This command uses the cmake at the top-level [CMakeLists.txt](/CMakeLists.txt) to configure the project and create a Makefile in the build directory.
 ```make```<br>
 Make finds the Makefile and uses the instructions in the Makefile to build the project.<br>
-<img src="build.png"/>
-<img src="compile.png"/>
+<img src="doc/build.png"/>
+<img src="doc/compile.png"/>
 
 ### How to run unit tests
 1. Run the generated execultable in ```build/tests``` folder.<br>
 ```.\runTests.exe```<br>
-<img src="test.png"/>
+<img src="doc/test.png"/>
 
 ### Useful links 
 Compilers 
