@@ -32,7 +32,7 @@ Make finds the Makefile and uses the instructions in the Makefile to build the p
 <img src="doc/compile.png"/>
 
 ### How to run unit tests
-1. Run the generated execultable in ```build/tests``` folder.<br>
+1. Run the generated executable in ```build/tests``` folder.<br>
 ```.\runTests.exe```<br>
 <img src="doc/test.png"/>
 
