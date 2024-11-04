@@ -1,5 +1,5 @@
 ## Sample CPP
-Create and build a multifile CPP project.
+Create and build a multifile CPP project with unit test.
 
 ### Prerequisite
 1. [CMake](https://cmake.org/)
@@ -10,22 +10,31 @@ Create and build a multifile CPP project.
     CPP                                # Multifile CPP repository
     ├── src                            # Source code folder                   
     │   ├── main.cpp                   # Main file
-    │   ├── sum.cpp                    # Sum file
-    │   ├── sum.h                      # Sum file   
-    ├── CMakeLists.txt                 # Build instructions                            
+    │   ├── sum.cpp                    # Sum implementation file
+    ├── include                        # Source code folder                   
+    │   ├── sum.h                      # Sum header file
+    ├── tests                          # Unit test                   
+    │   ├── test_sum.cpp               # Source file for unit tests
+    │   ├── CMakeLists.txt             # Build instructions at test level   
+    ├── CMakeLists.txt                 # Build instructions at project level                           
     └── README.md
 
 ### How to run
 In terminal (powershell for e.g.),
-1. Create and enter ```build``` directory.<br>
+1. Create and enter ```build``` directory (if code is not already built).<br>
 ```mkdir build && cd build```
 2. Run CMake.<br>
 ```cmake ..```<br>
 This command uses the cmake at the top-level [CMakeLists.txt](/CMakeLists.txt) to configure the project and create a Makefile in the build directory.
 ```make```<br>
-Make finds the Makefile and uses the instructions in the Makefile to build the project.
-3. Run the generated execultable in build folder.<br>
-```.\example.exe```
+Make finds the Makefile and uses the instructions in the Makefile to build the project.<br>
+<img src="build.png"/>
+<img src="compile.png"/>
+
+### How to run unit tests
+1. Run the generated execultable in ```build/tests``` folder.<br>
+```.\runTests.exe```<br>
+<img src="test.png"/>
 
 ### Useful links 
 Compilers 
@@ -34,3 +43,6 @@ Compilers
 
 Discussions
 1. [Templates](https://stackoverflow.com/questions/13025266/redefinition-of-templateclass-t-in-c)
+
+Google Tests
+1. [Incorporating gTest in existing project](https://github.com/google/googletest/blob/main/googletest/README.md#incorporating-into-an-existing-cmake-project)
