@@ -9,9 +9,9 @@ Create and build a multifile CPP project with unit test.
 ### Files
     CPP                                # Multifile CPP repository
     ├── src                            # Source code folder                   
-    │   ├── sum.cpp                    # Sum implementation file
+    │   ├── sum.cpp                    # Implementation file
     ├── include                        # Source code folder                   
-    │   ├── sum.h                      # Sum header file
+    │   ├── sum.h                      # Header file
     ├── tests                          # Unit test                   
     │   ├── test_sum.cpp               # Source file for unit tests
     │   ├── CMakeLists.txt             # Build instructions at test level   
