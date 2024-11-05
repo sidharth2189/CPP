@@ -1,5 +1,5 @@
 ## Sample CPP
-Create and build a multifile CPP project with unit test.
+Create and build a multifile CPP project with unit test and coverage.
 
 ### Prerequisite
 1. [CMake](https://cmake.org/)
