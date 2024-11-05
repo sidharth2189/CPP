@@ -10,7 +10,7 @@ Create and build a multifile CPP project with unit test and coverage.
     CPP                                # Multifile CPP repository
     ├── src                            # Source code folder                   
     │   ├── sum.cpp                    # Implementation file
-    ├── include                        # Source code folder                   
+    ├── include                        # Include folder                   
     │   ├── sum.h                      # Header file
     ├── tests                          # Unit test                   
     │   ├── test_sum.cpp               # Source file for unit tests
